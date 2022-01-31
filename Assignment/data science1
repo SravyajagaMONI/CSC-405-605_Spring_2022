@@ -1,0 +1,36 @@
+import csv
+import random
+data = list(csv.reader(open("sp-22-students.tsv"), delimiter='\t'))
+# %% [markdown]
+# ### Reading the File and moving the pointer from header to first student.
+
+# %%
+students_list=[]
+for i in data[1:]:
+students_list.append(i[:2])
+random.shuffle(students_list)
+# %% [markdown]
+# ### Reading the data into a list called students_list and shuffling it using random library.
+
+# %%
+strength=len(students_list)
+groups=int(input('Enter the desired number of Teams in integers: '))
+for i in range(0, groups):
+    Teams=[]
+    for y in range(i, strength, int(groups)):
+        Teams.append(students_list[y])
+    print('Members of team ',i+1,' are: \n', Teams)
+    # %% [markdown]
+# ### Taking the input for number of desired groups to be formed from user in integers.
+# Then a for loop will be run n times, where n is the desired number of groups.
+# with an equal interavels of n, a nested for loop will get the values(y) starting with the group number and ending with the total number of students in the class.The yth value from the students list is attached to each team's new list.
+# 
+# ### Output:
+# The output will be the list of students from each new Team formed.
+# 
+# 
+
+# %%
+
+
+# %%
